@@ -1,7 +1,7 @@
 {
   "name": "@porla-contrib/pushbullet",
   "version": "0.1.0",
-  "description": "",
+  "description": "A Pushbullet plugin for Porla.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -13,9 +13,10 @@
   "keywords": [
     "porla",
     "porla-contrib",
+    "porla-plugin",
     "pushbullet"
   ],
-  "author": "",
+  "author": "Viktor Elofsson <viktor@viktorelofsson.se>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/porla-contrib/pushbullet/issues"
@@ -24,5 +25,8 @@
   "dependencies": {
     "mustache": "^2.3.2",
     "request": "^2.88.0"
+  },
+  "peerDependencies": {
+    "@porla/porla": "^0.3.0"
   }
 }

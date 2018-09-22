@@ -1,17 +1,16 @@
 const Mustache = require('mustache');
 const request = require('request');
 
-const url = 'https://api.pushbullet.com';
+const url = 'https://api.pushbullet.com/v2/pushes';
 
 module.exports = (accessToken) => {
     return function pushbullet(message, options) {
-        let parsedOptions = options || {};
+        const parsedOptions = options || {};
 
-        return function push(item) {
+        return function pushNote(item) {
             const renderedMessage = Mustache.render(message, item);
 
             return new Promise((resolve, reject) => {
-                const pushesUrl = `${url}/v2/pushes`;
                 const requestOptions = {
                     headers: {
                         'Access-Token': accessToken
@@ -24,7 +23,7 @@ module.exports = (accessToken) => {
                     json: true
                 };
 
-                request.post(pushesUrl, requestOptions, (err) => {
+                request.post(url, requestOptions, (err) => {
                     if (err) {
                         return reject(err);
                     }

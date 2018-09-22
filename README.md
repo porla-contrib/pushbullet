@@ -13,6 +13,6 @@ const pushbullet = require('@porla-contrib/pushbullet')('YourAccessToken');
 const app = new Porla();
 
 app.subscribe('torrent.added', [
-    pushbullet('Torrent {{ name }} added')
+    pushbullet('Torrent {{ torrent.name }} added')
 ]);
 ```
